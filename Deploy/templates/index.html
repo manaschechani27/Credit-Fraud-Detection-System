@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Model Deployment</title>
+    <link rel="stylesheet" href="/static/styles.css"> <!-- Ensure correct path to styles.css -->
+</head>
+<body>
+    <div class="container">
+        <h1>ML Credit Card Fraud Detection</h1>
+        <form method="POST" action="/predict">
+            <label for="input_data">Enter Data (comma-separated):</label><br>
+            <input type="text" id="input_data" name="input_data" required><br><br>
+            <button type="button" onclick="processInput()">Verify Data </button>
+        </form>
+        
+        <div id="data_display" style="display: none;">
+            <h2>Input Data:</h2>
+            <p id="time"></p>
+            <p id="v1"></p>
+            <p id="v2"></p>
+            <p id="v3"></p>
+            <p id="v4"></p>
+            <p id="v5"></p>
+            <p id="v6"></p>
+            <p id="v7"></p>
+            <p id="v8"></p>
+            <p id="v9"></p>
+            <p id="v10"></p>
+            <p id="v11"></p>
+            <p id="v12"></p>
+            <p id="v13"></p>
+            <p id="v14"></p>
+            <p id="v15"></p>
+            <p id="v16"></p>
+            <p id="v17"></p>
+            <p id="v18"></p>
+            <p id="v19"></p>
+            <p id="v20"></p>
+            <p id="v21"></p>
+            <p id="v22"></p>
+            <p id="v23"></p>
+            <p id="v24"></p>
+            <p id="v25"></p>
+            <p id="v26"></p>
+            <p id="v27"></p>
+            <p id="v28"></p>
+            <p id="amount"></p>
+            <button onclick="predict()">Predict</button>
+        </div>
+
+        <div id="result" style="display: none;">
+            <h2>Prediction:</h2>
+            <p id="prediction"></p>
+        </div>
+
+        <div class="footer">
+            <a href="https://www.linkedin.com/">LinkedIn</a>
+            <a href="https://www.instagram.com/">Instagram</a>
+            <a href="https://github.com/">GitHub</a>
+            <a href="{{ url_for('redirect_page') }}">About Project</a>
+        </div>
+    </div>
+
+    <script>
+        function processInput() {
+            const inputData = document.getElementById('input_data').value.trim();
+            const dataArr = inputData.split(',');
+
+            const feature_names = ['Time', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10',
+                                   'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19',
+                                   'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28',
+                                   'Amount'];
+
+            for (let i = 0; i < feature_names.length; i++) {
+                document.getElementById(feature_names[i].toLowerCase()).textContent = `${feature_names[i]}: ${dataArr[i]}`;
+            }
+
+            document.getElementById('data_display').style.display = 'block';
+        }
+
+        async function predict() {
+            const formData = new FormData();
+            formData.append('input_data', document.getElementById('input_data').value);
+
+            const response = await fetch('/predict', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+            document.getElementById('prediction').textContent = result.prediction === 0 ? 'Legit' : 'Fraud';
+
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
