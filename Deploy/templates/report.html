@@ -1,0 +1,143 @@
+
+<head>
+      <title> ML Project </title>
+</head>
+
+<body>
+    <p class="title"> <br></p>
+    <div style="text-align: center; font-size: 15pt; margin-bottom: 15px">
+            <span>ML Project</a></span>
+    </div>
+    <style>
+        /* Custom carousel control icon style */
+        .custom-carousel-icon {
+            background-color: black;
+            width: 15px; /* Adjust width as needed */
+            height: 10px; /* Adjust height as needed */
+        }
+
+        /* Customizing the direction of the arrow */
+        .carousel-control-prev-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M4 0L0 4l1.5 1.5 2.5-2.5V8h2V3L6.5 4.5 8 3 4 0z'/%3e%3c/svg%3e");
+        }
+
+        .carousel-control-next-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M4 0l3 4-3 4-1.5-1.5L4.5 4 2.5 2.5 4 1z'/%3e%3c/svg%3e");
+        }
+    </style>
+
+    <table width="999" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+        <tbody>
+            <tr>
+                <td align="center"><a href="https://github.com/manaschechani27/Fraud-Detection-System/tree/main/notebooks">Code</a> | <a href="https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud?resource=download">Dataset</a> | <a href="https://www.youtube.com/embed/rYlWvNh9VCs">Project Video</a></td>
+            </tr>
+        </tbody>
+    </table>
+ 
+        <div style="text-align: justify;text-justify: inter-word;">
+        <p><span class="section"><b>Introduction</b></span> </p>
+        <p>In our increasingly digital world, the accurate identification of faces holds
+            significant importance across diverse fields. This project focuses on the
+            task of face identification, wherein a given face image is classified into one
+            of several predefined classes.
+            We employ three distinct feature extraction techniques – Local Binary
+            Patterns (LBP), Histogram of Oriented Gradients (HoG), and Convolu-
+            tional Neural Networks (CNNs) ,Linear Discriminant Ananlysis (LDA) and
+            Principal Component Ananlysis (PCA) – to capture unique facial charac-
+            teristics.
+            Our aim is to compare the effectiveness of these techniques in identifying
+            faces using the Labeled Faces in the Wild (LFW) dataset sourced from
+            Kaggle. This dataset, provides a comprehensive collection of labeled face
+            images suitable for training and evaluation.
+            Throughout this report, we detail the implementation of each feature
+            extraction method, the experimental setup, and the comparative analy-
+            sis of their performance in face identification. This project serves as a
+            valuable exploration of multimodal feature analysis in the context of facial
+            recognition, offering insights into its potential applications and limitations.
+            2</p>
+        </div>
+        <div style="text-align: justify;text-justify: inter-word;">
+        <p><b>Keywords:</b>Local binary pattern, HOG, PCA, LDA, CNN, SVM, Random Forest, Gradient Booster, Logistic regression, Web Dev, Image uploading </p>
+        </div>
+
+        <p class="section"><b>Images in Dataset</b></p>
+        <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <img src="https://i.pinimg.com/474x/1b/dd/64/1bdd64b079a47e32c17fd14ac2e3231b.jpg" alt="" width="500px" height="500px" style="margin: 10px;" />
+            </div>
+        <br>
+        <p style="text-align: center;">Examples of Images.</p>
+        
+        <p class="section">&nbsp;</p>
+
+<p class="section"><b>Project Video</b></p>
+<centre>
+<iframe width="667" height="500"  src="https://www.youtube.com/embed/rYlWvNh9VCs">
+</iframe>
+</centre>
+
+</table>
+
+ <p class="section">&nbsp;</p>
+        <p class="section">&nbsp;</p>
+        <div class="team">
+            <p class="section" id="team"><b>Creator</b></p>
+  <div class="row justify-content-center">
+
+                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2">
+                     <div class="mainflip">
+                           <div class="card">
+                              <div class="card-body text-center card-no-padding">
+                                 <p><img class=" img-fluid" src="https://i.pinimg.com/474x/b3/d0/ca/b3d0caad8644480c1fe879a29fc4c07b.jpg" alt="card image" width="300px" height="300px"></p>
+                                 <h5 class="card-title">Manas<br>Chechani</h5>
+                              </div>
+                           </div>
+                     </div>
+                  </div>
+     </div>
+        <p class="section">&nbsp;</p>
+    <!-- Footer -->
+<footer>
+    <p class="m-0 text-center">Copyright &copy; IIT Jodhpur Batch of 2026</p>
+    <!-- Footer -->
+    <button onclick="goBack()" style="margin-top: 10px;">Go Back</button>
+</footer>   
+
+<script>
+    // Function to navigate back to the previous page
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+</footer>   
+
+</body>
+
+ <script>
+    function prompt_on(prompt_element) {
+        prompt_element.classList.add("caption-active");
+    }
+
+    function prompt_off(prompt_element) {
+        prompt_element.classList.remove("caption-active");
+    }
+
+    function toggle_prompt(active_prompt_id, inactive_prompt_ids, result_id) {
+        let active_prompt = document.getElementById(active_prompt_id);
+        prompt_on(active_prompt);
+        for (let i = 0; i < inactive_prompt_ids.length; i++) {
+            let inactive_prompt = document.getElementById(inactive_prompt_ids[i]);
+            prompt_off(inactive_prompt);
+        }
+
+        let result = document.getElementById(result_id);
+        result.src = file_paths[active_prompt_id];
+    }
+ </script>
+
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
